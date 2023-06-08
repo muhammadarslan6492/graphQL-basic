@@ -18,6 +18,7 @@ import { GraphQLServer } from 'graphql-yoga';
 
 const typeDefs = `type Query {
   greeting(name: String): String!
+  grades: [Int!]
 }`;
 
 // Resolvers
@@ -45,6 +46,9 @@ const resolvers = {
       } else {
         return 'Hello!';
       }
+    },
+    grades() {
+      return [10, 15, 40];
     },
   },
 };
